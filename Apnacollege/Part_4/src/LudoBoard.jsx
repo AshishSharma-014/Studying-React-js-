@@ -1,0 +1,44 @@
+import { useState } from "react";
+function LudoBoard() {
+    let [moves, setMoves] = useState({blue : 0, red : 0, green : 0, yellow : 0});
+    let updateBlue = () => {
+        console.log(`blue.moves : ${moves.blue}`);
+        setMoves((prevMoves) => {
+            return {...prevMoves, blue : prevMoves.blue + 1}
+        });
+    }
+    let updateRed = () => {
+        console.log(`red.moves : ${moves.red}`);
+        setMoves((prevMoves) => {
+            return {...prevMoves, red : prevMoves.red + 1}
+        });
+    }
+    let updateGreen = () => {
+        console.log(`green.moves : ${moves.green}`);
+        setMoves((prevMoves) => {
+            return {...prevMoves, green : prevMoves.green + 1}
+        });
+    }
+    let updateYellow = () => {
+        console.log(`blue.yellow : ${moves.yellow}`);
+        setMoves((prevMoves) => {
+            return {...prevMoves, yellow : prevMoves.yellow + 1}
+        });
+    }
+    return (
+        <div>
+            <p>Game Begins</p>
+            <div className="innerDiv">
+                <p>Blue Moves : {moves.blue}</p>
+                <button style = {{backgroundColor : "blue"}} onClick={updateBlue}>+1</button>
+                <p>Red Moves : {moves.red}</p>
+                <button style = {{backgroundColor : "red"}} onClick={updateRed}>+1</button>
+                <p>Green Moves : {moves.green}</p>
+                <button style = {{backgroundColor : "green"}} onClick={updateGreen}>+1</button>
+                <p>Yellow Moves : {moves.yellow}</p>
+                <button style = {{backgroundColor : "yellow", color : "black"}} onClick={updateYellow}>+1</button>
+            </div>
+        </div>
+    )
+}
+export default LudoBoard;
