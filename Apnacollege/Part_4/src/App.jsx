@@ -1,10 +1,9 @@
 import './App.css';
-import LudoBoard from './LudoBoard';
-import TodoList from './TodoList';
+import Counter from './components/Counter';
 function App() {
   return (
     <div>
-      <TodoList/>
+      <Counter/>
     </div>
   )
 }
