@@ -1,4 +1,6 @@
 import './App.css'
+import DataFetcher from './components/DataFetcher';
+import TimerComponent from './components/TimerComponent';
 import { useEffect, useState } from 'react'
 
 function App() {
@@ -45,23 +47,30 @@ function App() {
   // variation 5 
   // Now let's add a clean up
 
-  useEffect(() => {
-    alert("count is updated")
-    return () => {
-      alert("count is unmounted form UI")
-    }
-  }, [count])
+  // useEffect(() => {
+  //   alert("count is updated")
+  //   return () => {
+  //     alert("count is unmounted form UI")
+  //   }
+  // }, [count])
 
-  function handleClick() {
-    setCount(count + 1);
-  }
+  // function handleClick() {
+  //   setCount(count + 1);
+  // }
 
-  function updateTotal() {
-    setTotal(total + 1);
-  }
+  // function updateTotal() {
+  //   setTotal(total + 1);
+  // }
+
+
+
   return (
     <div>
-      <button onClick={handleClick}>
+      
+      {/* <TimerComponent /> */}
+      <DataFetcher/>
+      
+      {/* <button onClick={handleClick}>
         update current
       </button>
       <br></br>
@@ -72,7 +81,7 @@ function App() {
         update total
       </button>
       <br></br>
-      <h2>Total : {total}</h2>
+      <h2>Total : {total}</h2> */}
     </div>
   )
 }
